@@ -20,13 +20,13 @@ context('Actions', () => {
   describe('Test Post Interaction Process', () => {
     it('should be able to log in and create post', function () {
       cy.visit(`${Cypress.env('base_url_conduit')}`);
-
       cy.CreateNewPost();
     })
 
     it('should be able to log in and delete created post', function () {
       cy.visit(`${Cypress.env('base_url_conduit')}`);
       cy.NavigateToPost();
+      cy.DeletePost();
     })
   })
 })

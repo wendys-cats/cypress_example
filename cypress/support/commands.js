@@ -43,7 +43,9 @@ Cypress.Commands.add('APIlogin', () => {
     cy.get('[class="preview-link"]').should('contain', this.articleName).first().click();
     // INFO validation for URL redirect - should contain article name
     cy.url().should('include', '/article/' + this.articleNameURL)
+  }),
 
+  Cypress.Commands.add('DeletePost', function () {
     cy.get('button').contains(' Delete Article').click();
     cy.get('[class="nav-link"]').should('contain', 'Global Feed');
   })
