@@ -20,13 +20,26 @@ npm install cypress --save-dev
 ```
 or through yarn, pnpm or direct download
 
-NOTE: If you are using NixOS, install through yarnpkg
+NOTE: If you are using NixOS, check whether it is pre-installed. If not, install through yarnpkg or through npm (above)
 ### NixOS
 ```bash
 yarnpkg add cypress
 ```
 
-NOTE: If you're using Linux, you'll want to have the required dependencies installed on your system.
+add to default.nix 
+```bash
+{ pkgs ? import <nixos-unstable> {} }:
+  pkgs.mkShell {
+    nativeBuildInputs = with pkgs; [ nodejs-18_x cypress ];
+
+    shellHook = ''
+      export CYPRESS_INSTALL_BINARY=0
+      export CYPRESS_RUN_BINARY=${pkgs.cypress}/bin/Cypress
+    '';
+}
+```
+
+NOTE: If you're using other Linux distributions, you'll want to have the required dependencies installed on your system.
 ### Ubuntu/Debian
 ```bash
 apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
@@ -39,3 +52,5 @@ yum install -y xorg-x11-server-Xvfb gtk2-devel gtk3-devel libnotify-devel GConf2
 ```bash
 dnf install -y xorg-x11-server-Xvfb gtk3-devel nss alsa-lib
 ```
+
+Check [Cypress Documentation](https://docs.cypress.io/guides/getting-started/installing-cypress) for more information
