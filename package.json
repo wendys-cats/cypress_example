@@ -11,28 +11,17 @@
     "test": "npm start & cypress run",
     "pretest": "npm run lint",
     "print-env": "print-env",
-    "lint": "lint --fix cypress app/assets/js/scripts.js",
-    "lint:yaml": "yamllint '*.yml' '.buildkite/*.yml' '.circleci/*.yml' '.github/workflows/*.yml' '.semaphore/*.yml' 'basic/**/*.yml' ",
-    "colon:names": "colon-names",
     "e2e": "cypress run",
     "e2e:chrome": "cypress run --browser chrome",
-    "e2e:record": "cypress run --record",
-    "e2e:record:chrome": "cypress run --record --browser chrome",
-    "e2e:record:edge": "cypress run --record --browser edge",
-    "e2e:record:firefox": "cypress run --record --browser firefox",
-    "e2e:record:parallel": "cypress run --record --parallel",
     "cy:verify": "cypress verify",
     "cy:info": "cypress info",
     "cy:version": "cypress version",
     "cy:cache:list": "cypress cache list",
     "cy:run": "cypress run",
-    "cy:run:record": "cypress run --record",
     "cy:open": "cypress open",
     "local:open": "start-test 8080 cy:open",
     "local:run": "start-test 8080 cy:run",
-    "local:run:record": "start-test 8080 cy:run:record",
-    "ci:set-port": "node ./scripts/set-port",
-    "semantic-release": "semantic-release"
+    "ci:set-port": "node ./scripts/set-port"
   },
   "repository": {
     "type": "git",
@@ -48,7 +37,5 @@
     "cypress": "^12.17.2",
     "cypress-localstorage-commands": "^2.2.3"
   },
-  "dependencies": {
-    "lint": "^0.8.19"
-  }
+  "dependencies": {}
 }
