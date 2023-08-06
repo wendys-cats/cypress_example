@@ -54,3 +54,18 @@ dnf install -y xorg-x11-server-Xvfb gtk3-devel nss alsa-lib
 ```
 
 Check [Cypress Documentation](https://docs.cypress.io/guides/getting-started/installing-cypress) for more information
+
+## Run Tests
+
+All of them in headless mode with Chrome by default
+```bash
+npx cypress run
+```
+Specific one in headless mode with Chrome by default
+```bash
+npx cypress run --spec=PATHYPATH
+```
+Specific one with Chrome by default, headed
+```bash
+npx cypress run --spec=PATHYPATH --headed
+```
