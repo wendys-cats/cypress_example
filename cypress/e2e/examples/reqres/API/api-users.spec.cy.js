@@ -28,7 +28,6 @@ context('/users endpoint, methods GET LIST, POST', () => {
           expect(body.id).to.exist
           expect(body.createdAt.split('-', 1)).to.contain(yearNow)
         })
-
       })
     })
 
