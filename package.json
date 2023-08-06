@@ -1,7 +1,7 @@
 {
   "name": "cypress",
   "version": "1.0.0",
-  "description": "this is an example repository for login in cypress",
+  "description": "this is an example repository in cypress",
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
@@ -21,13 +21,6 @@
     "e2e:record:edge": "cypress run --record --browser edge",
     "e2e:record:firefox": "cypress run --record --browser firefox",
     "e2e:record:parallel": "cypress run --record --parallel",
-    "test:ci": "run-p --race start e2e",
-    "test:ci:chrome": "run-p --race start e2e:chrome",
-    "test:ci:record": "run-p --race start e2e:record",
-    "test:ci:record:chrome": "run-p --race start e2e:record:chrome",
-    "test:ci:record:edge": "run-p --race start e2e:record:edge",
-    "test:ci:record:firefox": "run-p --race start e2e:record:firefox",
-    "test:ci:record:parallel": "run-p --race start e2e:record:parallel",
     "cy:verify": "cypress verify",
     "cy:info": "cypress info",
     "cy:version": "cypress version",
@@ -39,8 +32,7 @@
     "local:run": "start-test 8080 cy:run",
     "local:run:record": "start-test 8080 cy:run:record",
     "ci:set-port": "node ./scripts/set-port",
-    "semantic-release": "semantic-release",
-    "prepare": "node ./scripts/prepare.js"
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
