@@ -23,7 +23,7 @@ or through yarn, pnpm or direct download
 NOTE: If you are using NixOS, check whether it is pre-installed. If not, install through yarnpkg or through npm (above)
 ### NixOS
 ```bash
-yarnpkg add cypress
+yarnpkg add cypress --dev
 ```
 
 add to default.nix 
