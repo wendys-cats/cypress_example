@@ -11,7 +11,6 @@ context('/users endpoint, methods GET LIST, POST', () => {
   })
 
   describe('Test /users endpoint response and validate', () => {
-
     it('POST /users request and response validation', () => {
       let dateNow = new Date
       let flavour = Date.now().toString();
@@ -37,7 +36,6 @@ context('/users endpoint, methods GET LIST, POST', () => {
       // WHY does it have to be a call to page 2?
       cy.request("GET", `${Cypress.env('api_url_reqres')}/users?page=2`).should((response) => {
         expect(response.status).to.eq(200);
-
       }).then(({ body }) => {
         // TODO change validation to DB vs API comparison in future
         expect(body.total).to.exist
@@ -47,7 +45,5 @@ context('/users endpoint, methods GET LIST, POST', () => {
         expect((body.data.length) * (body.total_pages)).to.be.equal((body.total))
       })
     })
-
-
   })
 })

@@ -8,7 +8,6 @@ context('Actions', () => {
     const articleNameURL = articleName.replace(/ /g, '-');
     cy.wrap(articleNameURL).as('articleNameURL')
     cy.wrap(articleName).as('articleName')
-
   });
 
   beforeEach('Creates session. Clears session before each test.', () => {
@@ -28,10 +27,6 @@ context('Actions', () => {
     it('should be able to log in and delete created post', function () {
       cy.visit(`${Cypress.env('base_url_conduit')}`);
       cy.NavigateToPost();
-
-
     })
-
-
   })
 })
